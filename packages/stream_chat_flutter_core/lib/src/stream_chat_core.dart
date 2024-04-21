@@ -124,7 +124,7 @@ class StreamChatCoreState extends State<StreamChatCore>
     Stream<ConnectivityResult>? connectivityStream,
   ]) {
     if (_connectivitySubscription == null) {
-      connectivityStream ??= Connectivity()!.onConnectivityChanged;
+      connectivityStream ??= Connectivity()?.onConnectivityChanged;
       _connectivitySubscription =
           connectivityStream.distinct().listen((result) {
         _isConnectionAvailable = result != ConnectivityResult.none;
